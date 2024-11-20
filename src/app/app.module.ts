@@ -4,17 +4,20 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ApplicationService } from './services/application.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent, // Add all your components here
+    LoginComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule // Include Angular modules here
+    BrowserModule, AppRoutingModule, HttpClientModule,  ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ApplicationService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent], // Bootstrap the root component
 })
